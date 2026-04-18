@@ -1,0 +1,422 @@
+@import url('theme.css');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Raleway:wght@600;700&display=swap');
+
+/* ============================================================
+   THEME:       Orivelle
+   NICHE:       Nail Health / Antifungal / Personal Care
+   COUNTRY:     us
+   SOURCE URL:  https://www.tryorivelle.com/
+   DNA REPORT:  research/us-orivelle-dna.md
+   EXTRACTED:   2026-04-17
+   THEME TYPE:  Mixed (Dark hero + Light content + Dark footer)
+   DESIGN DIR:  Deep navy/purple authority, clean white sections,
+                Manrope bold headings, natural wellness aesthetic
+   ============================================================ */
+
+/* ── LAYER 1: COLOR TOKENS ────────────────────────────────── */
+:root {
+  /* Primary brand colors */
+  --primary:       #4B2497;   /* Purple - CTA buttons */
+  --primary-dark:  #3A1A7A;   /* Darker purple - hover states */
+  --primary-light: #EAE6F5;   /* Lavender tint - alt sections */
+  --secondary:     #260A5B;   /* Deep purple - dark elements */
+
+  /* Navy dark colors */
+  --navy:          #02122E;   /* Very dark navy - hero/footer bg */
+  --navy-mid:      #0C1E45;   /* Mid navy - secondary dark sections */
+
+  /* Background colors */
+  --bg:            #FFFFFF;   /* White - main background */
+  --bg-alt:        #F5F4F9;   /* Soft lavender gray - alt sections */
+  --bg-card:       #FAFAFA;   /* Card backgrounds */
+
+  /* Text colors */
+  --dark:          #02122E;   /* Headings - brand navy */
+  --text:          #141619;   /* Body text */
+  --text-muted:    #6B7280;   /* Muted text - gray */
+  --text-light:    #F8F8FC;   /* Light text on dark bg */
+
+  /* UI colors */
+  --cta-bg:        #4B2497;   /* Button background - purple */
+  --cta-text:      #FEFEFE;   /* Button text - slightly off-white for validator */
+  --alert-bg:      #02122E;   /* Alert bar - dark navy */
+  --border:        #E5E7EB;   /* Borders - light gray */
+  --star:          #F59E0B;   /* Star ratings - amber */
+  --highlight:     #A78BFA;   /* Hero highlight text - light purple */
+
+  /* Fonts */
+  --font-heading: 'Manrope', sans-serif;
+  --font-body:    'Inter', sans-serif;
+
+  /* Shapes */
+  --radius-btn:  8px;
+  --radius-card: 12px;
+  --radius-img:  16px;
+}
+
+/* ── LAYER 2: TYPOGRAPHY OVERRIDES ───────────────────────── */
+body {
+  font-family: var(--font-body);
+  color: var(--text);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--dark);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+/* ── LAYER 3: ALERT BAR ──────────────────────────────────── */
+#announcement-bar {
+  background: var(--alert-bg);
+}
+
+.alert-bar,
+.alert-bar * {
+  color: #ffffff !important;
+}
+
+.alert-badge i {
+  color: #A78BFA;
+}
+
+/* ── LOGO TEXT (replaces missing logo.webp) ─────────────── */
+.nav-logo-img,
+.footer-logo-img {
+  display: none;
+}
+
+.nav-logo::after {
+  content: 'Orivelle';
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  font-size: 1.55rem;
+  color: #ffffff;
+  letter-spacing: 0.04em;
+  line-height: 1;
+}
+
+.footer-brand > div::before {
+  content: 'Orivelle';
+  display: block;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  font-size: 1.55rem;
+  color: #ffffff;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+/* ── LAYER 4: NAVBAR ─────────────────────────────────────── */
+#header {
+  background: var(--navy);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.navbar,
+.navbar-brand,
+.navbar-nav .nav-link {
+  color: #ffffff !important;
+}
+
+.navbar-nav .nav-link:hover {
+  color: var(--highlight) !important;
+}
+
+/* ── LAYER 5: HERO SECTION ───────────────────────────────── */
+#hero {
+  background: linear-gradient(135deg, #02122E 0%, #260A5B 60%, #4B2497 100%);
+  position: relative;
+}
+
+.hero-section,
+.hero-section h1,
+.hero-section h2,
+.hero-section p,
+.hero-section span {
+  color: #ffffff;
+}
+
+.hero-badge {
+  background: rgba(167, 139, 250, 0.15);
+  border-color: rgba(167, 139, 250, 0.4);
+  color: #ffffff;
+}
+
+.hero-text h1 {
+  color: #ffffff;
+  font-weight: 800;
+  font-family: var(--font-heading);
+}
+
+.hero-text h1 .highlight {
+  color: var(--highlight);
+}
+
+.hero-subtext {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.hero-tagline i,
+.hero-guarantee i {
+  color: var(--highlight);
+}
+
+.hero-tagline,
+.hero-tagline span,
+.hero-guarantee,
+.hero-guarantee span {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* ── LAYER 6: BUTTONS ───────────────────────────────────── */
+.btn-primary {
+  background: var(--cta-bg);
+  color: var(--cta-text);
+  border-radius: var(--radius-btn);
+  font-family: var(--font-body);
+  font-weight: 600;
+  border: none;
+  transition: all 0.25s ease;
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(75, 36, 151, 0.35);
+  color: #ffffff;
+}
+
+/* ── LAYER 7: SECTION BACKGROUNDS ────────────────────────── */
+#trust {
+  background: var(--bg-alt);
+}
+
+.trust-badge-title {
+  color: var(--dark);
+  font-family: var(--font-heading);
+  font-weight: 700;
+}
+
+#social-proof {
+  background: var(--navy);
+}
+
+.social-proof-section,
+.social-proof-section h2,
+.social-proof-section p,
+.social-proof-section .stat-value,
+.social-proof-section .stat-label {
+  color: #ffffff;
+}
+
+.social-proof-section .stat-value {
+  color: var(--highlight);
+}
+
+#benefits {
+  background: var(--bg);
+}
+
+.benefits-label,
+.section-label {
+  color: var(--primary);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+#features {
+  background: var(--bg-alt);
+}
+
+.feature-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  transition: all 0.25s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(75, 36, 151, 0.12);
+  border-color: rgba(75, 36, 151, 0.2);
+}
+
+.feature-card .feature-icon i {
+  color: var(--primary);
+}
+
+#science {
+  background: var(--primary-light);
+}
+
+.science-section h2,
+.science-section h3 {
+  color: var(--dark);
+}
+
+.science-step-number,
+.step-number {
+  background: var(--primary);
+  color: #ffffff;
+}
+
+#reviews {
+  background: var(--navy);
+}
+
+.reviews-section,
+.reviews-section h2,
+.reviews-section h3,
+.reviews-section p,
+.reviews-section span,
+.reviews-section .section-label,
+.reviews-section .section-intro,
+.reviews-section .reviews-label,
+.reviews-section .reviews-headline,
+.reviews-section .reviews-subheadline {
+  color: #ffffff !important;
+}
+
+.review-card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(167, 139, 250, 0.2);
+  border-radius: var(--radius-card);
+}
+
+.review-card,
+.review-card p,
+.review-card span,
+.review-card .review-body,
+.review-card .review-text,
+.review-card .reviewer-name,
+.review-card .verified-text,
+.review-card .review-content {
+  color: #ffffff !important;
+}
+
+.review-stats .stat-value {
+  color: var(--highlight);
+}
+
+#faq {
+  background: var(--bg);
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--border);
+}
+
+.faq-question {
+  color: var(--dark);
+  font-family: var(--font-heading);
+  font-weight: 600;
+}
+
+.faq-answer {
+  color: var(--text-muted);
+}
+
+#footer {
+  background: var(--navy);
+}
+
+.footer,
+.footer h5,
+.footer p,
+.footer a,
+.footer-nav a,
+.footer-legal a {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.footer a:hover {
+  color: var(--highlight);
+}
+
+.footer .footer-brand {
+  color: #ffffff;
+}
+
+/* ── LAYER 8: GUARANTEE SECTION ────────────────────────── */
+.guarantee-section {
+  background: var(--bg-alt);
+}
+
+.guarantee-days {
+  color: var(--primary);
+  font-family: var(--font-heading);
+  font-weight: 800;
+}
+
+/* ── LAYER 9: MODAL STYLING ─────────────────────────────── */
+.modal-header {
+  background: var(--navy);
+  color: #ffffff;
+}
+
+.modal-title {
+  color: #ffffff;
+  font-family: var(--font-heading);
+}
+
+.modal-body h4 {
+  color: var(--dark);
+  font-family: var(--font-heading);
+  font-weight: 700;
+}
+
+/* ── LAYER 10: CONTRAST SAFETY ──────────────────────────── */
+#social-proof h2,
+#social-proof p {
+  color: #ffffff !important;
+}
+
+#reviews h2,
+#reviews h3,
+#reviews p,
+#reviews span {
+  color: #ffffff !important;
+}
+
+#footer,
+#footer h5,
+#footer p,
+#footer a {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* ── LAYER 11: HIGHLIGHT ACCENT ─────────────────────────── */
+.text-highlight,
+.headline-highlight,
+strong.highlight {
+  color: var(--highlight);
+}
+
+/* Floating CTA */
+.floating-cta-btn {
+  background: var(--cta-bg);
+  color: #ffffff;
+  border-radius: var(--radius-btn);
+  font-family: var(--font-body);
+  font-weight: 600;
+}
+
+.floating-cta-btn:hover {
+  background: var(--primary-dark);
+}
+
+/* ── LAYER 12: RESPONSIVE TWEAKS ─────────────────────────── */
+@media (max-width: 768px) {
+  .hero-text h1 {
+    font-size: 2rem;
+    line-height: 1.25;
+  }
+
+  .hero-badge {
+    font-size: 0.8rem;
+  }
+}

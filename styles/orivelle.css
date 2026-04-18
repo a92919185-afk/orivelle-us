@@ -97,7 +97,7 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1;
 }
 
-.footer-brand > div::before {
+.footer-brand > div:first-child::before {
   content: 'Orivelle';
   display: block;
   font-family: 'Raleway', sans-serif;
